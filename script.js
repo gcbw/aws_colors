@@ -17,6 +17,8 @@ setTimeout(function(){
     var regionobj = regionobjs[0]
     region = regionobj.innerText;
     log(region);
+
+    // match background color using default colors from old/abandoned https://addons.mozilla.org/en-US/firefox/addon/aws-console-regions-color/
     data = [
       { "name": "N. Virginia", "code": "us-east-1", "color": "#e6194b", "country": "us", "az":6 },
       { "name": "Ohio", "code": "us-east-2", "color": "#3cb44b", "country": "us", "az":3 },
@@ -42,15 +44,15 @@ setTimeout(function(){
     var color;
 
     if( matches.length != 1 ){
-      console.log("didn't match region correction. got " + matches.length + " matches");
+      log("didn't match region correctly. got " + matches.length + " matches");
       // default color?
     }else{
-      console.log("match with " + matches[0].name +".");
+      log("match with " + matches[0].name +".");
       color = matches[0].color;
 
       var navbars = document.querySelectorAll('[aria-label="Navigation bar"]');
       if( navbars.length < 1 ){
-        console.log('no navbar found! painting body margins!');
+        log('no navbar found! painting body margins!');
         document.body.style.border = "5px solid "+color+"";
       }else{
         navbars.forEach(
@@ -59,6 +61,13 @@ setTimeout(function(){
           }
         );
       }
+
+      // show region name instead of logo
+      var logo = document.getElementById('nav-home-link');
+      var logoRegion = document.createElement('span');
+      logoRegion.style.margin = "auto";
+      logoRegion.appendChild(document.createTextNode(matches[0].code));
+      logo.replaceWith(logoRegion);
     }
   }
 }, 1000);
