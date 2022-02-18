@@ -7,7 +7,7 @@
   "description": "tries to fix minimal usability fuckups from amazon lazy workers. Source https://github.com/gcbw/aws_colors",
 
   "icons": {
-    "48": "icons/border-48.png"
+    "128": "favicon.png"
   },
 
   "content_scripts": [
