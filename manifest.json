@@ -1,0 +1,21 @@
+{
+
+  "manifest_version": 2,
+  "name": "aws colors",
+  "version": "1.0",
+
+  "description": "tries to fix minimal usability fuckups from amazon lazy workers. Source https://github.com/gcbw/aws_colors",
+
+  "icons": {
+    "48": "icons/border-48.png"
+  },
+
+  "content_scripts": [
+    {
+      "matches": ["https://*.console.aws.amazon.com/*"],
+      "js": ["script.js"]
+    }
+  ]
+
+}
+
