@@ -2,7 +2,7 @@
 
   "manifest_version": 2,
   "name": "aws colors",
-  "version": "1.1",
+  "version": "1.2",
 
   "description": "tries to fix minimal usability fuckups from amazon lazy workers. Source https://github.com/gcbw/aws_colors",
 
